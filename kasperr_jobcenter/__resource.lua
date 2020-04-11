@@ -8,21 +8,17 @@ files {
 	"configNui.js",
 	"client/html/debounce.min.js",
 	"client/html/sweetalert2.all.min.js",
-	-- Icons
-	"client/html/icons/police.jpg",
-	"client/html/icons/taxi.png"
+	"client/html/icons/*"
 }
 
 client_script {
 	"lib/Tunnel.lua",
 	"lib/Proxy.lua",
 	"config.lua",
-	"servercallback/client.lua",
 	"client/main.lua"
 }
 server_scripts {
 	"@vrp/lib/utils.lua",
 	"config.lua",
-	"servercallback/server.lua",
 	"server/main.lua"
 }

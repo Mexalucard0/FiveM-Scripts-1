@@ -22,8 +22,10 @@ kasperr = nil
 
 TriggerEvent('kasperr_base:getBaseObjects', function(obj) kasperr = obj end)
 
-kasperr.RegisterServerCallback('kasperr_jobcenter:selectJob', function (source, cb, group)
+kasperr.RegisterServerCallback('kasperr_jobcenter:selectJob', function (source, cb, jobID)
   local user_id = vRP.getUserId({source})
-  vRP.addUserGroup({user_id,group})
+  if Config.Jobs[jobID + 1].group ~= nil or Config.Jobs[jobID + 1].group ~= "" then
+    vRP.addUserGroup({user_id, Config.Jobs[jobID + 1].group})
+  end
   cb()
 end)

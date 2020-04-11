@@ -92,11 +92,17 @@ RegisterNUICallback("close", function(data)
   closeGui()
 end)
 
+RegisterNUICallback("getConfigs", function(data, cb)
+  cb(Config.Jobs)
+end)
+
 RegisterNUICallback("selectJob", function(data)
-  if data.group ~= nil then
-    kasperr.TriggerServerCallback('kasperr_jobcenter:selectJob', function() 
-    	nuiNotification("Du har nu valgt: " .. data.group .. " - God fornøjelse")
-    end, data.group)
+  if data.jobID ~= nil then
+    if Config.Jobs[data.jobID + 1].group ~= nil or Config.Jobs[data.jobID + 1].group ~= "" then
+      kasperr.TriggerServerCallback('kasperr_jobcenter:selectJob', function() 
+        nuiNotification("Du har nu valgt: " .. Config.Jobs[data.jobID + 1].group .. " - God fornøjelse")
+      end, data.jobID)
+    end
   end
 end)
 
