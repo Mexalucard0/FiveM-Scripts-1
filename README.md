@@ -8,35 +8,32 @@ Dog skal det siges, at jeg som sagt ikke har haft dem alle afprøvet på en offi
 
 ### Discord: https://discord.gg/uPQfJuu
 
-<a href="https://discord.gg/uPQfJuu"><img src="https://kasper-rasmussen.dk/assets/images/icons/discord_logo.png" /></a>
-
 ## Projekter:
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/info_16x16.png "Waiting") kasperr_phone - kommende udgivelse (under udvikling)
+kasperr_base
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/info_16x16.png "Waiting") kasperr_base - kommende udgivelse (under udvikling)
+kasperr_bank
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_bank [NYT]
+kasperr_helpdesk
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_helpdesk [NYT]
+kasperr_player_ping
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_player_ping
+kasperr_carjack_alert
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_carjack_alert
+kasperr_info_menu [(video)](https://youtu.be/wizzv1FT7Tk "Info menu - video")
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_info_menu [(video)](https://youtu.be/wizzv1FT7Tk "Info menu - video")
+kasperr_inventory [(video)](https://youtu.be/loLkBvHa110 "Inventory - video") 
+*- kasperr_progress_handler er påkrævet*
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_inventory [(video)](https://youtu.be/loLkBvHa110 "Inventory - video") *- kasperr_progress_handler er påkrævet*
+kasperr_jobcenter [(video)](https://youtu.be/CjaqFxzWaTM "Jobcenter - video") *- kasperr_base er påkrævet*
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_jobcenter [(video)](https://youtu.be/CjaqFxzWaTM "Jobcenter - video")
+kasperr_loadout [(video)](https://youtu.be/iAjVkuo1j3A "Loadout - video")
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_loadout [(video)](https://youtu.be/iAjVkuo1j3A "Loadout - video")
+kasperr_police_equipment [(video)](https://youtu.be/WORBnH0MDuA "Police equipment - video")
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_police_equipment [(video)](https://youtu.be/WORBnH0MDuA "Police equipment - video")
+kasperr_progress_handler
 
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_progress_handler
-
-![alt text](https://kasper-rasmussen.dk/assets/images/icons/check_16x16.png "Completed") kasperr_richpresence
+kasperr_richpresence
 
 ## Dokumentation:
 

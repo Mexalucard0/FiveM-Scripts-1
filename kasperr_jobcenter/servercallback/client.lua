@@ -12,18 +12,28 @@
   Steam: https://steamcommunity.com/id/kasperrasmussen
 ]]
 
-local Tunnel = module("vrp", "lib/Tunnel")
-local Proxy = module("vrp", "lib/Proxy")
+kasperr = {}
+kasperr.ServerCallbacks = {}
+kasperr.CurrentRequestId = 0
 
-vRP = Proxy.getInterface("vRP")
-vRPclient = Tunnel.getInterface("vRP", "kasperr_jobcenter")
+kasperr.TriggerServerCallback = function(name, cb, ...)
+	kasperr.ServerCallbacks[kasperr.CurrentRequestId] = cb
 
-kasperr = nil
+	TriggerServerEvent('kasperr:triggerServerCallback', name, kasperr.CurrentRequestId, ...)
 
-TriggerEvent('kasperr_base:getBaseObjects', function(obj) kasperr = obj end)
+	if kasperr.CurrentRequestId < 65535 then
+		kasperr.CurrentRequestId = kasperr.CurrentRequestId + 1
+	else
+		kasperr.CurrentRequestId = 0
+	end
+end
 
-kasperr.RegisterServerCallback('kasperr_jobcenter:selectJob', function (source, cb, group)
-  local user_id = vRP.getUserId({source})
-  vRP.addUserGroup({user_id,group})
-  cb()
+RegisterNetEvent('kasperr:serverCallback')
+AddEventHandler('kasperr:serverCallback', function(requestId, ...)
+	kasperr.ServerCallbacks[requestId](...)
+	kasperr.ServerCallbacks[requestId] = nil
 end)
+
+-- AddEventHandler('kasperr_base:getBaseObjects', function(cb)
+-- 	cb(kasperr)
+-- end)

@@ -17,10 +17,12 @@ client_script {
 	"lib/Tunnel.lua",
 	"lib/Proxy.lua",
 	"config.lua",
+	"servercallback/client.lua",
 	"client/main.lua"
 }
 server_scripts {
 	"@vrp/lib/utils.lua",
 	"config.lua",
+	"servercallback/server.lua",
 	"server/main.lua"
 }

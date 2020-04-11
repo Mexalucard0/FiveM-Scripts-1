@@ -15,6 +15,15 @@
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP", "kasperr_jobcenter")
 
+kasperr = nil
+
+Citizen.CreateThread(function()
+	while kasperr == nil do
+		TriggerEvent('kasperr_base:getBaseObjects', function(obj) kasperr = obj end)
+		Citizen.Wait(0)
+	end
+end)
+
 local open = false
 
 Citizen.CreateThread(function()
@@ -85,7 +94,9 @@ end)
 
 RegisterNUICallback("selectJob", function(data)
   if data.group ~= nil then
-    TriggerServerEvent("kasperr_jobcenter:selectJob", data.group)
+    kasperr.TriggerServerCallback('kasperr_jobcenter:selectJob', function() 
+    	nuiNotification("Du har nu valgt: " .. data.group .. " - God fornøjelse")
+    end, data.group)
   end
 end)
 

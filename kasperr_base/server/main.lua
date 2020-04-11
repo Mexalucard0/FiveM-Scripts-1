@@ -12,18 +12,30 @@
   Steam: https://steamcommunity.com/id/kasperrasmussen
 ]]
 
-local Tunnel = module("vrp", "lib/Tunnel")
-local Proxy = module("vrp", "lib/Proxy")
+kasperr = {}
+kasperr.ServerCallbacks = {}
 
-vRP = Proxy.getInterface("vRP")
-vRPclient = Tunnel.getInterface("vRP", "kasperr_jobcenter")
+RegisterServerEvent('kasperr:triggerServerCallback')
+AddEventHandler('kasperr:triggerServerCallback', function(name, requestId, ...)
+	local _source = source
 
-kasperr = nil
+  kasperr.TriggerServerCallback(name, requestID, _source, function(...)
+		TriggerClientEvent('kasperr:serverCallback', _source, requestId, ...)
+	end, ...)
+end)
 
-TriggerEvent('kasperr_base:getBaseObjects', function(obj) kasperr = obj end)
+kasperr.TriggerServerCallback = function(name, requestId, source, cb, ...)
+  if kasperr.ServerCallbacks[name] ~= nil then
+    kasperr.ServerCallbacks[name](source, cb, ...)
+	else
+		print('TriggerServerCallback => [' .. name .. '] does not exist')
+	end
+end
 
-kasperr.RegisterServerCallback('kasperr_jobcenter:selectJob', function (source, cb, group)
-  local user_id = vRP.getUserId({source})
-  vRP.addUserGroup({user_id,group})
-  cb()
+kasperr.RegisterServerCallback = function(name, cb)
+  kasperr.ServerCallbacks[name] = cb
+end
+
+AddEventHandler('kasperr_base:getBaseObjects', function(cb)
+	cb(kasperr)
 end)
